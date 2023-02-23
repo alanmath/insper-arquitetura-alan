@@ -1,19 +1,21 @@
 package org.example;
 
+import org.example.mensagem.MensagemArquivo;
+// import the mensage class
+import org.example.mensagem.MensagemTexto;
 
-import org.example.conta.Conta;
-import org.example.pessoa.Pessoa;
 
+// make a main that test the classes mensagem, mensagemArquivo e mensagemTexto and autor
 public class Main {
     public static void main(String[] args) {
-
-        Pessoa pessoa = new Pessoa("Eduardo", "12345");
-        Conta conta = new Conta(1000f, pessoa);
-
-        conta.deposito(1000f);
-        conta.saque(100f);
-
-        System.out.println(conta.getPessoa().getNome());
-        System.out.println(conta.getSaldo());
+        // make a new MensagemTexto
+        MensagemTexto mensagem = new MensagemTexto("Olá, tudo bem?", "João", "Maria");
+        // make a new MensagemArquivo
+        MensagemArquivo mensagemArquivo = new MensagemArquivo("arquivo.txt", "João", "Maria");
+        // print the mensage
+        System.out.println(mensagem.getTexto());
+        // print the mensage
+        System.out.println(mensagemArquivo.getArquivo());
     }
 }
+
